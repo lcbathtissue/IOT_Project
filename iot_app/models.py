@@ -6,3 +6,6 @@ class LightIntensity(models.Model):
 
     def __str__(self):
         return f'Intensity: {self.intensity_value} at {self.timestamp}'
+
+
+

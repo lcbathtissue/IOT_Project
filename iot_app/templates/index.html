@@ -1,3 +1,16 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Light Intensity Display</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Light Intensity Display</h1>-->
+<!--    <p>Latest Light Intensity: {{ latest_intensity }}</p>-->
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,5 +21,21 @@
 <body>
     <h1>Light Intensity Display</h1>
     <p>Latest Light Intensity: {{ latest_intensity }}</p>
+
+    <form method="POST" action="{% url 'index' %}">
+        {% csrf_token %}
+        <p>Control: {{ mode }}</p>
+        <p>LED: {{ led_value }}</p>
+
+        {% if mode != "MANUAL" %}
+            <button type="submit" name="mode-manual" value="manual">Manual</button>
+        {% endif %}
+        {% if mode != "AUTOMATIC" %}
+            <button type="submit" name="mode-automatic" value="automatic">Automatic</button>
+        {% endif %}
+        {% if mode != "AUTOMATIC" %}
+            <button type="submit" name="toggle" value="toggle">Toggle</button>
+        {% endif %}
+    </form>
 </body>
 </html>

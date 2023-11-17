@@ -1,6 +1,10 @@
-# IOT Project (Assignment 3)
+# My Django Project
 
-This is a Django project that takes photoresistor sensor readings from and Arduino and sends them to a Raspberry Pi using a bluetooth module and is then presented using a Django webserver.
+This is a Django project that [brief description].
+
+# My Django Project
+
+This is a Django project that [brief description].
 
 ## Project Structure
 
